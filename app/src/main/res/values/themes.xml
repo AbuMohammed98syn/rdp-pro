@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.RDPPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#2563EB</item>
+        <item name="colorPrimaryVariant">#1D4ED8</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#0D1322</item>
+        <item name="android:colorBackground">#060910</item>
+        <item name="android:windowBackground">#060910</item>
+        <item name="android:statusBarColor">#090D17</item>
+    </style>
+
+    <style name="TabText" parent="TextAppearance.MaterialComponents.Tab">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

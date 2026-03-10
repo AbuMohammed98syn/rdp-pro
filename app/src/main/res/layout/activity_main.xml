@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#060910">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#090D17" android:padding="10dp" android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+            android:src="@android:drawable/ic_menu_slideshow" android:tint="#2563EB"/>
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RDP Pro" android:textColor="#FFFFFF"
+                android:textSize="13sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvAddr"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="#4A5568" android:textSize="9sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvFps"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#4A5568" android:textSize="9sp" android:fontFamily="monospace"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="● جاري..." android:textColor="#F59E0B" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#090D17"
+        app:tabTextColor="#4A5568"
+        app:tabSelectedTextColor="#60A5FA"
+        app:tabIndicatorColor="#2563EB"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@style/TabText"/>
+
+    <!-- Content -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

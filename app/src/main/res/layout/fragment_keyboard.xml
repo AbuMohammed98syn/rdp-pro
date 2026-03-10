@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#060910">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="12dp">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── إدخال نص ───" android:textColor="#4A5568" android:textSize="10sp" android:gravity="center" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <EditText android:id="@+id/etTypeText" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+            android:background="@drawable/bg_field" android:textColor="#FFFFFF" android:hint="اكتب هنا..."
+            android:hintTextColor="#4A5568" android:paddingStart="12dp" android:textSize="14sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnSendText" android:layout_width="80dp" android:layout_height="52dp"
+            android:text="إرسال" android:textColor="#FFFFFF" android:background="@drawable/bg_btn_blue"/>
+    </LinearLayout>
+    <TextView android:id="@+id/tvKbStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textColor="#10B981" android:textSize="11sp" android:layout_marginTop="4dp"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── مفاتيح ───" android:textColor="#4A5568" android:textSize="10sp" android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="5dp">
+        <Button android:id="@+id/kEnter"     android:layout_width="0dp" android:layout_weight="2" android:layout_height="38dp" android:text="Enter"     android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kBackspace" android:layout_width="0dp" android:layout_weight="2" android:layout_height="38dp" android:text="⌫"          android:textSize="14sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kDelete"    android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Del"        android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kTab"       android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Tab"        android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kEsc"       android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Esc"        android:textSize="9sp" android:textColor="#F87171" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="5dp">
+        <Button android:id="@+id/kUp"    android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="↑" android:textSize="14sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kDown"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="↓" android:textSize="14sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kLeft"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="←" android:textSize="14sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kRight" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="→" android:textSize="14sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kHome"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Home" android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kEnd"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="End"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kSpace" android:layout_width="0dp" android:layout_weight="2" android:layout_height="38dp" android:text="Space" android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/kF1"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F1"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kF2"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F2"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kF4"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F4"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kF5"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F5"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kF11" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F11" android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/kF12" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="F12" android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── اختصارات ───" android:textColor="#4A5568" android:textSize="10sp" android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="5dp">
+        <Button android:id="@+id/hkCtrlC"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+C"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkCtrlV"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+V"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkCtrlX"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+X"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkCtrlZ"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+Z"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkCtrlA"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+A"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/hkCtrlS"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+S"  android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkAltF4"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Alt+F4"  android:textSize="9sp" android:textColor="#F87171" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkAltTab" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Alt+Tab" android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkWinD"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Win+D"   android:textSize="9sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/hkTaskMgr" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="TaskMgr" android:textSize="9sp" android:textColor="#F59E0B" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── الحافظة ───" android:textColor="#4A5568" android:textSize="10sp" android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <EditText android:id="@+id/etClipboard" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+            android:background="@drawable/bg_field" android:textColor="#FFFFFF" android:hint="نص الحافظة..."
+            android:hintTextColor="#4A5568" android:paddingStart="12dp" android:textSize="13sp" android:fontFamily="monospace"/>
+        <Space android:layout_width="6dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnPushClip" android:layout_width="60dp" android:layout_height="52dp"
+            android:text="دفع" android:textColor="#FFFFFF" android:background="@drawable/bg_btn_blue"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnPullClip" android:layout_width="60dp" android:layout_height="52dp"
+            android:text="سحب" android:textColor="#FFFFFF" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

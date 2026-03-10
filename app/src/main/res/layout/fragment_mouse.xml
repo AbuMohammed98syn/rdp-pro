@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#060910">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="12dp">
+
+    <!-- Position -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp"
+        android:background="@drawable/bg_field" android:gravity="center_vertical" android:paddingStart="14dp">
+        <TextView android:id="@+id/tvPos" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="960, 540"
+            android:textColor="#60A5FA" android:fontFamily="monospace" android:textSize="12sp"/>
+        <TextView android:id="@+id/tvAction" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#4A5568" android:textSize="11sp" android:layout_marginEnd="12dp"/>
+    </LinearLayout>
+
+    <!-- Sensitivity -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginTop="8dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="حساسية: " android:textColor="#94A3B8" android:textSize="12sp"/>
+        <SeekBar android:id="@+id/seekSens" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:max="55" android:progress="18"/>
+        <TextView android:id="@+id/tvSens" android:layout_width="30dp" android:layout_height="wrap_content"
+            android:text="2.8" android:textColor="#60A5FA" android:textSize="11sp" android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Touchpad -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── لوحة اللمس ───" android:textColor="#4A5568" android:textSize="10sp"
+        android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+    <View android:id="@+id/touchPad"
+        android:layout_width="match_parent" android:layout_height="140dp"
+        android:background="@drawable/bg_field"/>
+
+    <!-- Buttons -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── أزرار ───" android:textColor="#4A5568" android:textSize="10sp"
+        android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/btnML" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="يسار"  android:textSize="11sp" android:textColor="#10B981" android:background="@drawable/bg_btn_green_sm"/>
+        <Space android:layout_width="6dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnMD" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="مزدوج" android:textSize="11sp" android:textColor="#60A5FA" android:background="@drawable/bg_btn_blue_sm"/>
+        <Space android:layout_width="6dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnMR" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="يمين"  android:textSize="11sp" android:textColor="#F87171" android:background="@drawable/bg_btn_red_sm"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+        <Button android:id="@+id/btnMM" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="وسط"   android:textSize="11sp" android:textColor="#A78BFA" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="6dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnSU" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="↑ x5"  android:textSize="11sp" android:textColor="#22D3EE" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="6dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnSD" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="↓ x5"  android:textSize="11sp" android:textColor="#22D3EE" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+
+    <!-- Shortcuts -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── اختصارات ───" android:textColor="#4A5568" android:textSize="10sp"
+        android:gravity="center" android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/btnAltF4"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Alt+F4"  android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="5dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnWinD"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Win+D"   android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="5dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnAltTab" android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Alt+Tab" android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp">
+        <Button android:id="@+id/btnCtrlZ"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Ctrl+Z" android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="5dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnWinE"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Win+E"  android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="5dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnWinL"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="38dp" android:text="Win+L"  android:textSize="10sp" android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
