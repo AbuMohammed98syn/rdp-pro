@@ -10,7 +10,7 @@
         <item name="android:statusBarColor">#090D17</item>
     </style>
 
-    <style name="TabText" parent="TextAppearance.MaterialComponents.Tab">
+    <style name="TabText" parent="TextAppearance.AppCompat">
         <item name="android:textSize">10sp</item>
         <item name="android:textStyle">bold</item>
     </style>
