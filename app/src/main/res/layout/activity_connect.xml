@@ -1,70 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#060910">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050810">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="28dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <Space android:layout_width="match_parent" android:layout_height="48dp"/>
+        <Space android:layout_width="match_parent" android:layout_height="40dp"/>
 
-        <LinearLayout android:layout_width="80dp" android:layout_height="80dp"
-            android:layout_gravity="center" android:gravity="center"
-            android:background="@drawable/bg_icon">
-            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+        <!-- Logo -->
+        <LinearLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_logo"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:src="@android:drawable/ic_menu_slideshow"
                 android:tint="#FFFFFF"/>
         </LinearLayout>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="Remote Desktop Pro" android:textColor="#FFFFFF"
-            android:textSize="20sp" android:textStyle="bold"
-            android:gravity="center" android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remote Desktop Pro"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="14dp"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="v2.2" android:textColor="#4A5568"
-            android:textSize="12sp" android:gravity="center" android:layout_marginBottom="40dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="v3.0"
+            android:textColor="#4A5568"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="IP الحاسوب" android:textColor="#94A3B8" android:textSize="12sp" android:layout_marginBottom="8dp"/>
+        <!-- IP Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP الحاسوب"
+            app:boxBackgroundColor="#0D1528"
+            app:boxStrokeColor="#1A2540"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal|numberSigned"
+                android:digits="0123456789."
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:hint="192.168.1.x"
+                android:fontFamily="monospace"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText android:id="@+id/etIp"
-            android:layout_width="match_parent" android:layout_height="52dp"
-            android:background="@drawable/bg_field"
-            android:textColor="#FFFFFF" android:hint="192.168.1.x"
-            android:inputType="numberDecimal|numberSigned"
-            android:paddingStart="16dp"
-            android:digits="0123456789." android:textSize="15sp"/>
+        <!-- Port Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="المنفذ"
+            app:boxBackgroundColor="#0D1528"
+            app:boxStrokeColor="#1A2540"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:hint="8000"
+                android:fontFamily="monospace"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="المنفذ" android:textColor="#94A3B8"
-            android:textSize="12sp" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+        <!-- Token Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="رمز المصادقة (Token)"
+            app:boxBackgroundColor="#0D1528"
+            app:boxStrokeColor="#1A2540"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:hint="rdppro-secret-2024"
+                android:fontFamily="monospace"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText android:id="@+id/etPort"
-            android:layout_width="match_parent" android:layout_height="52dp"
-            android:background="@drawable/bg_field"
-            android:textColor="#FFFFFF" android:hint="8000"
-            android:inputType="number"
-            android:paddingStart="16dp" android:textSize="15sp"/>
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
 
-        <TextView android:id="@+id/tvError"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:textColor="#F87171" android:textSize="12sp"
-            android:layout_marginTop="8dp" android:visibility="gone"/>
+        <!-- Connect Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConnect"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:text="⚡ اتصال"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#2563EB"
+            app:cornerRadius="12dp"/>
 
-        <Button android:id="@+id/btnConnect"
-            android:layout_width="match_parent" android:layout_height="54dp"
-            android:layout_marginTop="24dp" android:text="اتصال"
-            android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold"
-            android:background="@drawable/bg_btn_blue"/>
+        <!-- QR Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnQr"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:text="📷 مسح QR Code"
+            android:textColor="#60A5FA"
+            android:textSize="13sp"
+            app:backgroundTint="#1E3A8A22"
+            app:strokeColor="#3B82F6"
+            app:strokeWidth="1dp"
+            app:cornerRadius="10dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="الاتصالات السابقة" android:textColor="#4A5568"
-            android:textSize="11sp" android:layout_marginTop="32dp" android:layout_marginBottom="8dp"/>
+        <!-- Divider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp">
+            <View android:layout_width="0dp" android:layout_height="1dp"
+                android:layout_weight="1" android:background="#1A2540"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="الاتصالات السابقة" android:textColor="#4A5568"
+                android:textSize="10sp" android:layout_marginHorizontal="12dp"/>
+            <View android:layout_width="0dp" android:layout_height="1dp"
+                android:layout_weight="1" android:background="#1A2540"/>
+        </LinearLayout>
 
-        <ListView android:id="@+id/lvHistory"
-            android:layout_width="match_parent" android:layout_height="200dp"
-            android:divider="#1E2E4A" android:dividerHeight="1dp"/>
+        <!-- History -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+
+        <Space android:layout_width="match_parent" android:layout_height="24dp"/>
 
     </LinearLayout>
 </ScrollView>
