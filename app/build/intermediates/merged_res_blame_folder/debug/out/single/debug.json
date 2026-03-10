@@ -1,0 +1,210 @@
+[
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-mdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_logo.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_logo.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_control.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_control.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_dark.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_dark.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_mode_off.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_mode_off.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_mouse.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_mouse.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_item_history.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/item_history.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xxxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_green.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_green.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_system.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_system.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_red_sm.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_red_sm.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/color_nav_text_color.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/color/nav_text_color.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_dot_green.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/dot_green.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_dashboard.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xxxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/color_nav_icon_color.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/color/nav_icon_color.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_blue.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_blue.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_icon.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_icon.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-hdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_mode_on.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_mode_on.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_item_process.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/item_process.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-hdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_activity_main.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_settings.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_screen.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_screen.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_more.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_more.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_mode_on.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_mode_on.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_audio.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_audio.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_green_sm.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_green_sm.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_clipboard.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_clipboard.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_card.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_card.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-mdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_terminal.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_terminal.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_blue_sm.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_blue_sm.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_keyboard.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_keyboard.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_item_file.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/item_file.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_files.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_files.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_activity_connect.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/activity_connect.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_shortcuts.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_shortcuts.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-xhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_camera.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_camera.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_btn_red.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_btn_red.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_field.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_field.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/drawable_bg_mode_off.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/drawable/bg_mode_off.xml"
+    },
+    {
+        "merged": "com.rdppro.rdpro.app-merged_res-48:/layout_fragment_webrtc.xml.flat",
+        "source": "com.rdppro.rdpro.app-main-50:/layout/fragment_webrtc.xml"
+    }
+]

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#060910">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="12dp">
+
+    <!-- Stats -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_field" android:padding="10dp">
+            <TextView android:id="@+id/tvCpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CPU: 0%" android:textColor="#60A5FA" android:textSize="12sp" android:textStyle="bold"/>
+            <ProgressBar android:id="@+id/pbCpu" android:layout_width="match_parent" android:layout_height="6dp" style="?android:attr/progressBarStyleHorizontal" android:progressTint="#2563EB" android:max="100"/>
+        </LinearLayout>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_field" android:padding="10dp">
+            <TextView android:id="@+id/tvRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM: 0%" android:textColor="#10B981" android:textSize="12sp" android:textStyle="bold"/>
+            <ProgressBar android:id="@+id/pbRam" android:layout_width="match_parent" android:layout_height="6dp" style="?android:attr/progressBarStyleHorizontal" android:progressTint="#10B981" android:max="100"/>
+        </LinearLayout>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_field" android:padding="10dp">
+            <TextView android:id="@+id/tvDisk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Disk: 0%" android:textColor="#F59E0B" android:textSize="12sp" android:textStyle="bold"/>
+            <ProgressBar android:id="@+id/pbDisk" android:layout_width="match_parent" android:layout_height="6dp" style="?android:attr/progressBarStyleHorizontal" android:progressTint="#F59E0B" android:max="100"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="40dp" android:background="@drawable/bg_field" android:gravity="center_vertical" android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginBottom="8dp">
+        <TextView android:id="@+id/tvNet" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="↑ 0.0 ↓ 0.0 Mbps" android:textColor="#22D3EE" android:textSize="11sp" android:fontFamily="monospace"/>
+        <TextView android:id="@+id/tvUptime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Uptime: 0h" android:textColor="#94A3B8" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <!-- Actions -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="─── إجراءات النظام ───" android:textColor="#4A5568" android:textSize="10sp"
+        android:gravity="center" android:layout_marginTop="8dp" android:layout_marginBottom="10dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/btnLock"    android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="🔒 قفل"       android:textSize="11sp" android:textColor="#10B981" android:background="@drawable/bg_btn_green_sm"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnTaskMgr" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="📊 مهام"       android:textSize="11sp" android:textColor="#A78BFA" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/btnCmd"   android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="⌨ CMD"          android:textSize="11sp" android:textColor="#22D3EE" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnSleep" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="💤 سكون"         android:textSize="11sp" android:textColor="#F59E0B" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/btnRestart"  android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="🔄 إعادة تشغيل" android:textSize="11sp" android:textColor="#F59E0B" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnShutdown" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="⏻ إيقاف"        android:textSize="11sp" android:textColor="#F87171" android:background="@drawable/bg_btn_red_sm"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
