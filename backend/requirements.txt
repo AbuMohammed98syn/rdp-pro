@@ -1,0 +1,17 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+websockets>=12.0
+pillow>=10.3.0
+pyautogui>=0.9.54
+psutil>=5.9.8
+numpy>=1.26.0
+pyperclip>=1.8.2
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+
+# اختيارية
+# soundcard>=0.4.3
+# screeninfo>=0.8.1
+# xxhash>=3.4.1
+# qrcode[pil]>=7.4
+# ffmpeg-python>=0.2.0

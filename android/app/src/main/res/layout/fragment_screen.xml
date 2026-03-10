@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000">
+
+    <!-- Mode bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#090D17"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp">
+
+        <Button android:id="@+id/btnTrackpad"
+            android:layout_width="wrap_content" android:layout_height="28dp"
+            android:text="Trackpad" android:textSize="9sp"
+            android:textColor="#60A5FA" android:background="@drawable/bg_mode_on"
+            android:paddingHorizontal="10dp"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnDirect"
+            android:layout_width="wrap_content" android:layout_height="28dp"
+            android:text="مباشر" android:textSize="9sp"
+            android:textColor="#4A5568" android:background="@drawable/bg_mode_off"
+            android:paddingHorizontal="10dp"/>
+        <Space android:layout_width="4dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnGesture"
+            android:layout_width="wrap_content" android:layout_height="28dp"
+            android:text="إيماءة" android:textSize="9sp"
+            android:textColor="#4A5568" android:background="@drawable/bg_mode_off"
+            android:paddingHorizontal="10dp"/>
+
+        <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+        <TextView android:id="@+id/tvMode"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#4A5568" android:textSize="9sp"/>
+    </LinearLayout>
+
+    <!-- Screen Image -->
+    <ImageView android:id="@+id/imgScreen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="#000000"
+        android:scaleType="fitCenter"/>
+
+    <!-- Trackpad -->
+    <View android:id="@+id/trackpad"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"/>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#090D17"
+        android:padding="5dp">
+
+        <Button android:id="@+id/btnLeft"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="يسار" android:textSize="10sp"
+            android:textColor="#10B981" android:background="@drawable/bg_btn_green"/>
+        <Space android:layout_width="3dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnDouble"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="×2" android:textSize="10sp"
+            android:textColor="#60A5FA" android:background="@drawable/bg_btn_blue"/>
+        <Space android:layout_width="3dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnRight"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="يمين" android:textSize="10sp"
+            android:textColor="#F87171" android:background="@drawable/bg_btn_red"/>
+        <Space android:layout_width="3dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnScrollUp"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="↑" android:textSize="14sp"
+            android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+        <Space android:layout_width="3dp" android:layout_height="1dp"/>
+        <Button android:id="@+id/btnScrollDown"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="↓" android:textSize="14sp"
+            android:textColor="#94A3B8" android:background="@drawable/bg_btn_dark"/>
+    </LinearLayout>
+</LinearLayout>
