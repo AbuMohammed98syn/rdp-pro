@@ -33,7 +33,7 @@
             android:background="@drawable/bg_field"
             android:textColor="#FFFFFF" android:hint="192.168.1.x"
             android:inputType="numberDecimal|numberSigned"
-            android:hintTextColor="#4A5568" android:paddingStart="16dp"
+            android:paddingStart="16dp"
             android:digits="0123456789." android:textSize="15sp"/>
 
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent" android:layout_height="52dp"
             android:background="@drawable/bg_field"
             android:textColor="#FFFFFF" android:hint="8000"
-            android:inputType="number" android:hintTextColor="#4A5568"
+            android:inputType="number"
             android:paddingStart="16dp" android:textSize="15sp"/>
 
         <TextView android:id="@+id/tvError"
