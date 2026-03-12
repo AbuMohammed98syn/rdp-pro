@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
         // Type and run
         etQuery?.setOnEditorActionListener { tv, _, _ ->
             runSmartCmd(tv.text.toString().trim())
-            tv.text.clear()
+            tv.setText("")
             toggleCmdBar(cmdBar)
             true
         }

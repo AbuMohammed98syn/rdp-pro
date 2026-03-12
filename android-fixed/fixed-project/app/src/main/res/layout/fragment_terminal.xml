@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#020508">
+
+    <ScrollView android:id="@+id/termScroll"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <TextView android:id="@+id/tvTermOutput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="10dp" android:textColor="#A7F3D0"
+            android:textSize="10sp" android:fontFamily="monospace"
+            android:text="RDP Pro Terminal\n$ "/>
+    </ScrollView>
+
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="36dp"
+        android:background="#060910">
+        <LinearLayout android:id="@+id/termQuick"
+            android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="8dp" android:paddingEnd="8dp"/>
+    </HorizontalScrollView>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+        android:background="#090D17" android:padding="8dp" android:gravity="center_vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="$" android:textColor="#10B981" android:textSize="16sp"
+            android:fontFamily="monospace" android:layout_marginEnd="8dp"/>
+        <EditText android:id="@+id/etCommand"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:background="@null" android:textColor="#FFFFFF" android:hint="اكتب الأمر..."
+            android:textSize="13sp" android:fontFamily="monospace"
+            android:imeOptions="actionSend" android:singleLine="true"/>
+        <Button android:id="@+id/btnRun"
+            android:layout_width="60dp" android:layout_height="match_parent"
+            android:text="run" android:textColor="#FFFFFF"
+            android:background="@drawable/bg_btn_blue"/>
+    </LinearLayout>
+
+</LinearLayout>

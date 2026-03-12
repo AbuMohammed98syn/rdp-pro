@@ -24,23 +24,6 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <TextView android:id="@+id/tvAudioViz"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="—" android:textColor="#94A3B8" android:textSize="13sp"
-        android:gravity="center" android:padding="8dp" android:layout_marginBottom="8dp"/>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:layout_marginBottom="12dp">
-        <Button android:id="@+id/btnAudioStart"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="44dp"
-            android:text="▶ تشغيل" android:textColor="#FFFFFF"
-            android:backgroundTint="#10B981" android:layout_marginEnd="6dp"/>
-        <Button android:id="@+id/btnAudioStop"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="44dp"
-            android:text="■ إيقاف" android:textColor="#FFFFFF"
-            android:backgroundTint="#EF4444" android:enabled="false"/>
-    </LinearLayout>
-
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
         android:text="مستوى الصوت" android:textColor="#94A3B8"
         android:textSize="11sp" android:layout_marginBottom="4dp"/>

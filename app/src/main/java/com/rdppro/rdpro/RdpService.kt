@@ -188,6 +188,41 @@ class RdpService(
 
     fun sendControl(msg: JSONObject) { controlWs?.send(msg.toString()) }
 
+    // ── Mouse helpers ─────────────────────────────────────────────────────────
+    fun mouseMove(x: Int, y: Int) =
+        sendControl(JSONObject().put("type","mouse_move").put("x",x).put("y",y))
+
+    fun mouseClick(x: Int? = null, y: Int? = null) {
+        val j = JSONObject().put("type","mouse_click").put("button","left")
+        x?.let { j.put("x",it) }; y?.let { j.put("y",it) }
+        sendControl(j)
+    }
+
+    fun mouseRight(x: Int? = null, y: Int? = null) {
+        val j = JSONObject().put("type","mouse_click").put("button","right")
+        x?.let { j.put("x",it) }; y?.let { j.put("y",it) }
+        sendControl(j)
+    }
+
+    fun mouseDbl() =
+        sendControl(JSONObject().put("type","mouse_click").put("button","double"))
+
+    fun mouseMiddle() =
+        sendControl(JSONObject().put("type","mouse_click").put("button","middle"))
+
+    fun mouseScroll(direction: String, amount: Int = 3) =
+        sendControl(JSONObject().put("type","mouse_scroll").put("direction",direction).put("amount",amount))
+
+    // ── Keyboard helpers ──────────────────────────────────────────────────────
+    fun keyType(text: String) =
+        sendControl(JSONObject().put("type","key_type").put("text",text))
+
+    fun keyPress(key: String) =
+        sendControl(JSONObject().put("type","key_press").put("key",key))
+
+    fun hotkey(vararg keys: String) =
+        sendControl(JSONObject().put("type","hotkey").put("keys",org.json.JSONArray(keys.toList())))
+
     // ── Chat ──────────────────────────────────────────────────────────────────
     fun connectChat() {
         val url = "$baseWs/ws/chat?token=$token"

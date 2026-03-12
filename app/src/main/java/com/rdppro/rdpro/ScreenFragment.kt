@@ -193,17 +193,19 @@ class ScreenFragment : Fragment() {
         btnRecord?.setOnClickListener {
             isRecording = !isRecording
             if (isRecording) {
-                rdp.startRecording()
+                rdp.startRecording { ok ->
+                    ui.post {
+                        if (!ok) Toast.makeText(context, "✗ فشل بدء التسجيل", Toast.LENGTH_SHORT).show()
+                    }
+                }
                 tvRecIndicator?.visibility = View.VISIBLE
                 tvRecIndicator?.text = "⏺ تسجيل"
                 Toast.makeText(context, "بدأ التسجيل", Toast.LENGTH_SHORT).show()
             } else {
-                rdp.stopRecording { j ->
+                rdp.stopRecording { path ->
                     ui.post {
                         tvRecIndicator?.visibility = View.GONE
-                        val path = j?.optString("path", "") ?: ""
-                        val frames = j?.optInt("frames", 0) ?: 0
-                        Toast.makeText(context, "✓ تم الحفظ ($frames إطار)", Toast.LENGTH_LONG).show()
+                        Toast.makeText(context, "✓ تم الحفظ: $path", Toast.LENGTH_LONG).show()
                     }
                 }
             }
