@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#050810">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="10dp">
+
+    <!-- Upload speed -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/bg_card" android:padding="10dp"
+        android:orientation="vertical" android:layout_marginBottom="8dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="📤 رفع (Upload)" android:textColor="#22D3EE"
+                android:textSize="11sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvNetSent"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="↑ 0.00 Mbps" android:textColor="#22D3EE"
+                android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartNetSent"
+            android:layout_width="match_parent" android:layout_height="100dp"/>
+    </LinearLayout>
+
+    <!-- Download speed -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/bg_card" android:padding="10dp"
+        android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="📥 تنزيل (Download)" android:textColor="#10B981"
+                android:textSize="11sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvNetRecv"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="↓ 0.00 Mbps" android:textColor="#10B981"
+                android:textSize="12sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartNetRecv"
+            android:layout_width="match_parent" android:layout_height="100dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

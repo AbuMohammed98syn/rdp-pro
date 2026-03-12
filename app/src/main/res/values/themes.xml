@@ -9,4 +9,19 @@
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
+
+<style name="Theme.RDPPro.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <item name="colorPrimary">#2563EB</item>
+    <item name="colorPrimaryVariant">#1D4ED8</item>
+    <item name="colorOnPrimary">#FFFFFF</item>
+    <item name="colorSecondary">#06B6D4</item>
+    <item name="android:windowBackground">#F1F5F9</item>
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+</style>
+
+<style name="TabTextSmall" parent="TextAppearance.Design.Tab">
+    <item name="android:textSize">11sp</item>
+    <item name="textAllCaps">false</item>
+</style>
 </resources>

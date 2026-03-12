@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RDP Pro</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connecting">Connecting…</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="ip_hint">192.168.1.x</string>
+    <string name="port_hint">8000</string>
+    <string name="token_hint">rdppro-secret-2024</string>
+    <string name="mac_hint">AA:BB:CC:DD:EE:FF</string>
+    <string name="scan_qr">Scan QR Code</string>
+    <string name="wake_on_lan">Wake PC</string>
+    <string name="screen">Screen</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="files">Files</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="more">More</string>
+    <string name="terminal">Terminal</string>
+    <string name="settings">Settings</string>
+    <string name="chat">Chat</string>
+    <string name="recording">Record</string>
+    <string name="quality">Quality</string>
+    <string name="fps">Frame Rate</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="success">Done</string>
+    <string name="loading">Loading…</string>
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="send">Send</string>
+    <string name="processes">Processes</string>
+    <string name="kill_process">Kill Process</string>
+    <string name="previous_connections">Previous Connections</string>
+    <string name="temp_token">Temp Token</string>
+    <string name="generate_token">Generate Token</string>
+</resources>

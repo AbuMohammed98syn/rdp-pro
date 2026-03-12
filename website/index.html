@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDP Pro — تحكم في حاسوبك من أي مكان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04070f;--surf1:#080d1a;--surf2:#0c1224;--border:#131e36;--blue:#2563eb;--blue2:#3d7fff;--cyan:#00d4aa;--orange:#f97316;--red:#ef4444;--yellow:#f59e0b;--purple:#8b5cf6;--text:#e2e8f0;--muted:#64748b;--dim:#94a3b8;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.015) 1px,transparent 0);background-size:32px 32px;pointer-events:none;z-index:0;}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px;overflow:hidden;}
+.glow{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;}
+.g1{width:600px;height:400px;background:rgba(37,99,235,.18);top:-100px;left:-100px;}
+.g2{width:400px;height:400px;background:rgba(0,212,170,.12);bottom:-50px;right:-50px;}
+.g3{width:300px;height:300px;background:rgba(249,115,22,.08);top:40%;right:10%;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.3);color:#7da8ff;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px;}
+.dot{width:6px;height:6px;border-radius:50%;background:#2563eb;display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-size:clamp(38px,7vw,76px);font-weight:900;line-height:1.1;text-align:center;letter-spacing:-.03em;animation:fadeUp .7s .1s both;}
+.accent{background:linear-gradient(135deg,#2563eb,#00d4aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:18px;color:var(--dim);text-align:center;max-width:540px;line-height:1.7;margin:18px auto 36px;animation:fadeUp .7s .2s both;}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .3s both;}
+.btn-p{background:var(--blue);color:#fff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;font-family:'Cairo',sans-serif;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s;box-shadow:0 0 30px rgba(37,99,235,.3);}
+.btn-p:hover{transform:translateY(-2px);background:#3d7fff;box-shadow:0 0 40px rgba(37,99,235,.5);}
+.btn-o{background:transparent;color:var(--text);padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;font-family:'Cairo',sans-serif;border:1px solid var(--border);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s;}
+.btn-o:hover{transform:translateY(-2px);border-color:var(--blue2);}
+.stats{display:flex;gap:48px;flex-wrap:wrap;justify-content:center;margin-top:56px;padding-top:36px;border-top:1px solid var(--border);animation:fadeUp .7s .4s both;}
+.sn{font-size:34px;font-weight:900;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+section{position:relative;padding:80px 24px;z-index:1;}
+.inner{max-width:1100px;margin:0 auto;}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;}
+h2{font-size:clamp(26px,4vw,42px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;}
+.sub{font-size:16px;color:var(--dim);max-width:540px;line-height:1.7;margin-bottom:44px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.card{background:var(--surf1);border:1px solid var(--border);border-radius:16px;padding:22px;position:relative;overflow:hidden;transition:.2s;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:.3s;}
+.card:hover{transform:translateY(-3px);border-color:rgba(37,99,235,.35);box-shadow:0 16px 40px rgba(0,0,0,.3);}
+.card:hover::before{opacity:1;}
+.cb::before{background:linear-gradient(90deg,#2563eb,#00d4aa);}
+.cc::before{background:linear-gradient(90deg,#00d4aa,#2563eb);}
+.co::before{background:linear-gradient(90deg,#f97316,#f59e0b);}
+.cp::before{background:linear-gradient(90deg,#8b5cf6,#ec4899);}
+.cg::before{background:linear-gradient(90deg,#22c55e,#00d4aa);}
+.cr::before{background:linear-gradient(90deg,#ef4444,#f97316);}
+.fi{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px;}
+.fb{background:rgba(37,99,235,.12);}.fc{background:rgba(0,212,170,.12);}.fo{background:rgba(249,115,22,.12);}.fp{background:rgba(139,92,246,.12);}.fg{background:rgba(34,197,94,.12);}.fr{background:rgba(239,68,68,.12);}
+.ft{font-size:15px;font-weight:700;margin-bottom:7px;}
+.fd{font-size:13px;color:var(--dim);line-height:1.55;}
+.new-badge{position:absolute;top:11px;left:11px;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);color:#7da8ff;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:100px;}
+.cl-box{background:var(--surf1);border:1px solid var(--border);border-radius:18px;padding:28px;}
+.cl-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--border);}
+.cl-row:last-child{border-bottom:none;}
+.cl-v{min-width:60px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--blue2);padding-top:2px;}
+.cl-row h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.cl-row p{font-size:12px;color:var(--dim);line-height:1.5;}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.tag{font-size:10px;padding:2px 7px;border-radius:100px;font-weight:600;}
+.tn{background:rgba(37,99,235,.1);color:#7da8ff;border:1px solid rgba(37,99,235,.2);}
+.tf{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2);}
+.ti{background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2);}
+.tp{background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2);}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:640px){.sgrid{grid-template-columns:1fr;}}
+.sc{background:var(--surf1);border:1px solid var(--border);border-radius:14px;padding:20px;}
+.snum{width:34px;height:34px;border-radius:8px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:#7da8ff;margin-bottom:12px;}
+.sc h3{font-size:14px;font-weight:700;margin-bottom:6px;}
+.sc p{font-size:12px;color:var(--dim);line-height:1.5;}
+.code{background:var(--surf2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#7da8ff;overflow-x:auto;white-space:pre;}
+.cm{color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:36px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto;}
+.fl{font-size:17px;font-weight:900;}
+.fl span{color:var(--blue2);}
+.flinks{display:flex;gap:20px;}
+.flinks a{color:var(--muted);text-decoration:none;font-size:13px;transition:.2s;}
+.flinks a:hover{color:var(--text);}
+.fr2{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.vis{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+  <div class="badge"><span class="dot"></span>الإصدار الحالي: v4.0.0</div>
+  <h1>تحكّم في حاسوبك<br>من <span class="accent">أي مكان في العالم</span></h1>
+  <p>تطبيق Android احترافي للتحكم الكامل بالحاسوب عن بُعد — سريع، آمن، وبواجهة عربية أصيلة</p>
+  <div class="actions">
+    <a href="#download" class="btn-p">📥 تحميل APK</a>
+    <a href="https://github.com/AbuMohammed98syn/rdp-pro" class="btn-o" target="_blank">⭐ GitHub</a>
+    <a href="#setup" class="btn-o">🚀 دليل التثبيت</a>
+  </div>
+  <div class="stats">
+    <div><div class="sn">30fps</div><div class="sl">بث الشاشة</div></div>
+    <div><div class="sn">&lt;50ms</div><div class="sl">تأخر منخفض</div></div>
+    <div><div class="sn">14+</div><div class="sl">ميزة متكاملة</div></div>
+    <div><div class="sn">100%</div><div class="sl">مفتوح المصدر</div></div>
+  </div>
+</section>
+
+<section id="features">
+<div class="inner">
+  <div class="lbl reveal">الميزات</div>
+  <h2 class="reveal">كل ما تحتاجه في تطبيق واحد</h2>
+  <p class="sub reveal">مبني على أفضل ما في RustDesk و Remote-Control — مع واجهة عربية احترافية</p>
+  <div class="grid">
+    <div class="card co reveal"><div class="new-badge">جديد v4</div><div class="fi fo">🔌</div><div class="ft">Wake-on-LAN</div><div class="fd">أيقظ حاسوبك النائم عن بُعد بإرسال Magic Packet — حتى قبل الاتصال بالتطبيق</div></div>
+    <div class="card cb reveal"><div class="new-badge">جديد v4</div><div class="fi fb">💬</div><div class="ft">دردشة أثناء الجلسة</div><div class="fd">تواصل نصي فوري مع الحاسوب أثناء التحكم — رسائل WebSocket في الوقت الفعلي</div></div>
+    <div class="card cr reveal"><div class="new-badge">جديد v4</div><div class="fi fr">⏺</div><div class="ft">تسجيل الجلسات</div><div class="fd">سجّل جلستك كفيديو لمراجعتها لاحقاً أو التوثيق الاحترافي</div></div>
+    <div class="card cp reveal"><div class="new-badge">جديد v4</div><div class="fi fp">🔑</div><div class="ft">رموز وصول مؤقتة</div><div class="fd">أنشئ Token صالح لجلسة واحدة أو فترة محددة — آمن للوصول المؤقت</div></div>
+    <div class="card cc reveal"><div class="new-badge">جديد v4</div><div class="fi fc">⚡</div><div class="ft">Delta Compression</div><div class="fd">إرسال الأجزاء المتغيرة فقط — أسرع بـ 40٪ وأقل استهلاكاً للشبكة</div></div>
+    <div class="card cg reveal"><div class="new-badge">جديد v4</div><div class="fi fg">🔄</div><div class="ft">إعادة اتصال ذكية</div><div class="fd">Exponential Backoff: 1s→2s→4s→30s حتى 12 محاولة تلقائية</div></div>
+    <div class="card cb reveal"><div class="fi fb">🖥️</div><div class="ft">بث الشاشة JPEG</div><div class="fd">بث سلس بجودة تكيّفية — Pinch to Zoom، ثلاثة أوضاع للتحكم</div></div>
+    <div class="card cc reveal"><div class="fi fc">🖱️</div><div class="ft">تحكم كامل بالماوس</div><div class="fd">نقر يسار/يمين/مزدوج/وسط، تمرير، سحب. مؤشر عائم يظهر موضعك</div></div>
+    <div class="card co reveal"><div class="fi fo">📁</div><div class="ft">إدارة الملفات</div><div class="fd">تصفح، نسخ، حذف، إعادة تسمية، رفع وتحميل الملفات</div></div>
+    <div class="card cp reveal"><div class="fi fp">💻</div><div class="ft">Terminal متكامل</div><div class="fd">PowerShell و CMD مع session CWD، أوامر مصنّفة بضغطة واحدة</div></div>
+    <div class="card cg reveal"><div class="fi fg">📊</div><div class="ft">مراقبة النظام</div><div class="fd">إحصائيات CPU/RAM/Disk/Network حية، قائمة العمليات مع Kill</div></div>
+    <div class="card cb reveal"><div class="fi fb">📷</div><div class="ft">QR Code Connect</div><div class="fd">امسح QR Code للاتصال الفوري — بدون كتابة IP</div></div>
+  </div>
+</div>
+</section>
+
+<section id="setup" style="background:var(--surf1)">
+<div class="inner">
+  <div class="lbl reveal">التثبيت</div>
+  <h2 class="reveal">ابدأ في دقيقتين</h2>
+  <div class="sgrid" style="margin-top:32px">
+    <div class="sc reveal"><div class="snum">01</div><h3>Backend على الحاسوب</h3><p>شغّل الخادم Python على حاسوبك</p><div class="code"><span class="cm"># تثبيت</span>
+pip install fastapi uvicorn pillow psutil pyautogui
+
+<span class="cm"># تشغيل</span>
+python backend/main.py</div></div>
+    <div class="sc reveal"><div class="snum">02</div><h3>تثبيت APK على الموبايل</h3><p>فعّل "مصادر غير معروفة" وثبّت التطبيق</p><div class="code"><span class="cm"># الإعدادات → الأمان</span>
+مصادر غير معروفة ✓
+
+<span class="cm"># ثبّت RDPPro-v4.0.apk</span></div></div>
+    <div class="sc reveal"><div class="snum">03</div><h3>الاتصال</h3><p>أدخل IP الحاسوب أو امسح QR Code</p><div class="code"><span class="cm"># أدخل في التطبيق:</span>
+IP: 192.168.1.x
+Port: 8000
+Token: rdppro-secret-2024</div></div>
+    <div class="sc reveal"><div class="snum">04</div><h3>Wake-on-LAN (اختياري)</h3><p>لتشغيل الحاسوب وهو نائم</p><div class="code"><span class="cm"># احصل على MAC Address:</span>
+Windows: ipconfig /all
+
+<span class="cm"># أدخله في حقل MAC</span>
+<span class="cm"># اضغط "إيقاظ"</span></div></div>
+  </div>
+</div>
+</section>
+
+<section id="changelog">
+<div class="inner">
+  <div class="lbl reveal">التحديثات</div>
+  <h2 class="reveal">سجل التغييرات</h2>
+  <div class="cl-box reveal" style="margin-top:28px">
+    <div class="cl-row"><div class="cl-v">v4.0</div><div><h4>🚀 الإصدار الرئيسي الجديد</h4><p>تحديث شامل يضيف ميزات التواصل والأمان والأداء</p><div class="tags"><span class="tag tn">Wake-on-LAN</span><span class="tag tn">Chat</span><span class="tag tn">Recording</span><span class="tag tn">Temp Tokens</span><span class="tag tp">Delta Compression</span><span class="tag tf">Exponential Backoff</span><span class="tag ti">Floating Cursor</span></div></div></div>
+    <div class="cl-row"><div class="cl-v">v3.1</div><div><h4>تحسينات WebRTC والتيرمنال</h4><p>Camera Fragment، توسيع التيرمنال، WebRTC كامل</p><div class="tags"><span class="tag tn">WebRTC Video</span><span class="tag tn">Camera Stream</span><span class="tag ti">Terminal+</span></div></div></div>
+    <div class="cl-row"><div class="cl-v">v3.0</div><div><h4>إعادة هيكلة — Kotlin Native</h4><p>انتقال من Web إلى تطبيق Kotlin أصيل</p><div class="tags"><span class="tag tn">Kotlin App</span><span class="tag tn">QR Scanner</span><span class="tag tn">File Manager</span></div></div></div>
+    <div class="cl-row"><div class="cl-v">v2.1</div><div><h4>ميزات التحكم المتقدمة</h4><p>Trackpad/Touch/Gesture، Terminal، كاميرا</p><div class="tags"><span class="tag tn">Multi-mode</span><span class="tag ti">Screen Quality</span></div></div></div>
+  </div>
+</div>
+</section>
+
+<section id="download" style="text-align:center">
+<div class="inner">
+  <div class="lbl reveal" style="justify-content:center;display:block">تحميل</div>
+  <h2 class="reveal">احصل على RDP Pro مجاناً</h2>
+  <p class="sub reveal" style="margin:0 auto 36px">مفتوح المصدر — لا إعلانات — لا رسوم</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="reveal">
+    <a href="https://github.com/AbuMohammed98syn/rdp-pro/releases/latest" class="btn-p" target="_blank">📥 آخر إصدار APK</a>
+    <a href="https://github.com/AbuMohammed98syn/rdp-pro" class="btn-o" target="_blank">⭐ مستودع GitHub</a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="fl">🖥️ RDP <span>Pro</span></div>
+  <nav class="flinks">
+    <a href="#features">الميزات</a>
+    <a href="#setup">التثبيت</a>
+    <a href="#changelog">التحديثات</a>
+    <a href="https://github.com/AbuMohammed98syn/rdp-pro" target="_blank">GitHub</a>
+  </nav>
+  <div class="fr2">v4.0.0 — MIT License</div>
+</footer>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

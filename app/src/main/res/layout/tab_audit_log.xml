@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#050810">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="36dp"
+        android:background="#080D17" android:gravity="center_vertical"
+        android:paddingHorizontal="10dp">
+        <TextView android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="📋 Audit Log" android:textColor="#94A3B8" android:textSize="12sp"/>
+        <Button android:id="@+id/btnAuditRefresh"
+            android:layout_width="wrap_content" android:layout_height="26dp"
+            android:text="🔄" android:textSize="11sp"
+            android:background="@drawable/bg_btn_dark"
+            android:paddingHorizontal="8dp" android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/btnAuditClear"
+            android:layout_width="wrap_content" android:layout_height="26dp"
+            android:text="🗑" android:textSize="11sp"
+            android:background="@drawable/bg_btn_dark"
+            android:paddingHorizontal="8dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAudit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"/>
+</LinearLayout>

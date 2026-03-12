@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#050810" android:padding="12dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/etWlIp"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="40dp" android:background="@drawable/bg_field"
+            android:textColor="#FFFFFF" android:textSize="12sp"
+            android:hint="IP أو CIDR (192.168.1.0/24)"
+            android:textColorHint="#4A5568" android:paddingHorizontal="10dp"
+            android:fontFamily="monospace" android:inputType="text"
+            android:layout_marginEnd="6dp"/>
+        <Button android:id="@+id/btnWlAdd"
+            android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="✅ سماح" android:textSize="10sp" android:textColor="#FFFFFF"
+            android:background="@drawable/bg_btn_blue" android:paddingHorizontal="8dp"
+            android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/btnWlBlock"
+            android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="🚫 حظر" android:textSize="10sp" android:textColor="#FFFFFF"
+            android:background="@drawable/bg_btn_dark" android:paddingHorizontal="8dp"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:background="@drawable/bg_card" android:padding="10dp">
+        <TextView android:id="@+id/tvWhitelist"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#94A3B8" android:textSize="11sp"
+            android:fontFamily="monospace" android:lineSpacingMultiplier="1.5"
+            android:text="جاري التحميل..."/>
+    </ScrollView>
+</LinearLayout>

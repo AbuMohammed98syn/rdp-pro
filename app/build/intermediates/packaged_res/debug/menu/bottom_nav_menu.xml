@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/nav_dash"    android:icon="@android:drawable/ic_menu_info_details"  android:title="لوحة"/>
-    <item android:id="@+id/nav_screen"  android:icon="@android:drawable/ic_menu_slideshow"     android:title="شاشة"/>
-    <item android:id="@+id/nav_files"   android:icon="@android:drawable/ic_menu_agenda"        android:title="ملفات"/>
-    <item android:id="@+id/nav_control" android:icon="@android:drawable/ic_menu_send"          android:title="تحكم"/>
-    <item android:id="@+id/nav_more"    android:icon="@android:drawable/ic_menu_more"          android:title="أكثر"/>
-</menu>

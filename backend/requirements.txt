@@ -1,17 +1,26 @@
-fastapi>=0.110.0
-uvicorn[standard]>=0.29.0
-websockets>=12.0
-pillow>=10.3.0
-pyautogui>=0.9.54
-psutil>=5.9.8
-numpy>=1.26.0
-pyperclip>=1.8.2
-python-multipart>=0.0.9
-aiofiles>=23.2.1
+# RDP Pro v4.0 — Python Backend Requirements
+# تثبيت: pip install -r requirements.txt
 
-# اختيارية
-# soundcard>=0.4.3
-# screeninfo>=0.8.1
-# xxhash>=3.4.1
-# qrcode[pil]>=7.4
-# ffmpeg-python>=0.2.0
+# Web framework
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+
+# Screen capture + mouse control
+Pillow==10.2.0
+pyautogui==0.9.54
+numpy==1.26.4
+
+# System info
+psutil==5.9.8
+
+# Clipboard
+pyperclip==1.8.2
+
+# QR Code (optional)
+qrcode[pil]==7.4.2
+
+# Audio (optional — Windows only)
+# soundcard==0.4.3
+
+# Hash acceleration (optional)
+# xxhash==3.4.1

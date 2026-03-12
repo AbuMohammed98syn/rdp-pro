@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RDP Pro</string>
+    <string name="connect">اتصال</string>
+    <string name="disconnect">قطع الاتصال</string>
+    <string name="connecting">جاري الاتصال…</string>
+    <string name="connected">متصل</string>
+    <string name="disconnected">غير متصل</string>
+    <string name="ip_hint">192.168.1.x</string>
+    <string name="port_hint">8000</string>
+    <string name="token_hint">rdppro-secret-2024</string>
+    <string name="mac_hint">AA:BB:CC:DD:EE:FF</string>
+    <string name="scan_qr">مسح QR Code</string>
+    <string name="wake_on_lan">إيقاظ الحاسوب</string>
+    <string name="screen">الشاشة</string>
+    <string name="dashboard">لوحة التحكم</string>
+    <string name="files">الملفات</string>
+    <string name="keyboard">لوحة مفاتيح</string>
+    <string name="more">أكثر</string>
+    <string name="terminal">التيرمنال</string>
+    <string name="settings">الإعدادات</string>
+    <string name="chat">الدردشة</string>
+    <string name="recording">تسجيل</string>
+    <string name="quality">الجودة</string>
+    <string name="fps">معدل الإطارات</string>
+    <string name="confirm">تأكيد</string>
+    <string name="cancel">إلغاء</string>
+    <string name="error">خطأ</string>
+    <string name="success">تم</string>
+    <string name="loading">جاري التحميل…</string>
+    <string name="copy">نسخ</string>
+    <string name="paste">لصق</string>
+    <string name="send">إرسال</string>
+    <string name="processes">العمليات</string>
+    <string name="kill_process">إيقاف العملية</string>
+    <string name="previous_connections">الاتصالات السابقة</string>
+    <string name="temp_token">رمز مؤقت</string>
+    <string name="generate_token">إنشاء Token</string>
+
+
+    <string-array name="perm_levels">
+        <item>⚡ وصول كامل</item>
+        <item>👁 عرض فقط</item>
+        <item>📁 ملفات فقط</item>
+        <item>💻 تيرمنال فقط</item>
+    </string-array>
 </resources>

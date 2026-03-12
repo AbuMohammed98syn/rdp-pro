@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/bg_card" android:padding="7px"
+    android:gravity="center_vertical" android:layout_marginBottom="2dp">
+    <TextView android:id="@+id/tvStepType"
+        android:layout_width="0dp" android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textColor="#3B82F6" android:textSize="10sp"
+        android:fontFamily="monospace" android:textStyle="bold"/>
+    <TextView android:id="@+id/tvStepData"
+        android:layout_width="0dp" android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:textColor="#94A3B8" android:textSize="9sp" android:fontFamily="monospace"/>
+    <TextView android:id="@+id/tvStepDelay"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textColor="#4A5568" android:textSize="8sp" android:fontFamily="monospace"
+        android:layout_marginEnd="4dp"/>
+    <Button android:id="@+id/btnDelStep"
+        android:layout_width="22dp" android:layout_height="22dp"
+        android:text="✕" android:textSize="9sp" android:textColor="#EF4444"
+        android:background="@drawable/bg_btn_dark" android:padding="0dp"/>
+</LinearLayout>

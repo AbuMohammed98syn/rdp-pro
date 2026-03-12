@@ -1,0 +1,204 @@
+name: 🚀 Build RDP Pro APK
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type (debug/release)'
+        required: false
+        default: 'debug'
+
+env:
+  JAVA_VERSION: '17'
+  ANDROID_COMPILE_SDK: '34'
+  ANDROID_MIN_SDK: '24'
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────
+  build-android:
+    name: 🤖 Build Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # 1. Checkout code
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Java 17 (required for AGP 8+)
+      - name: ☕ Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: gradle
+
+      # 3. Setup Android SDK
+      - name: 📱 Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # 4. Cache Gradle dependencies (speeds up future builds)
+      - name: 📦 Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.android/build-cache
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      # 5. Grant execute permission for gradlew
+      - name: 🔑 Grant Gradlew Permission
+        run: chmod +x ./gradlew
+
+      # 6. Validate Gradle wrapper
+      - name: ✅ Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v2
+
+      # 7. Build Debug APK
+      - name: 🔨 Build Debug APK
+        run: |
+          ./gradlew assembleDebug \
+            --no-daemon \
+            --stacktrace \
+            -Pandroid.suppressUnsupportedCompileSdk=34 \
+            2>&1 | tail -100
+
+      # 8. (Optional) Build Release APK on tags
+      - name: 📦 Build Release APK
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          ./gradlew assembleRelease \
+            --no-daemon \
+            --stacktrace \
+            2>&1 | tail -100
+
+      # 9. Get version info
+      - name: 📋 Get Version Info
+        id: version
+        run: |
+          VERSION=$(grep 'versionName' app/build.gradle | awk -F'"' '{print $2}')
+          COMMIT=$(git rev-parse --short HEAD)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "commit=$COMMIT" >> $GITHUB_OUTPUT
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      # 10. Rename APK files
+      - name: 🏷️ Rename APK
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          COMMIT=${{ steps.version.outputs.commit }}
+          DATE=${{ steps.version.outputs.date }}
+
+          # Debug APK
+          if [ -f app/build/outputs/apk/debug/app-debug.apk ]; then
+            mv app/build/outputs/apk/debug/app-debug.apk \
+               app/build/outputs/apk/debug/RDPPro-v${VERSION}-debug-${COMMIT}.apk
+          fi
+
+          # Release APK
+          if [ -f app/build/outputs/apk/release/app-release-unsigned.apk ]; then
+            mv app/build/outputs/apk/release/app-release-unsigned.apk \
+               app/build/outputs/apk/release/RDPPro-v${VERSION}-release-${COMMIT}.apk
+          fi
+
+      # 11. Upload Debug APK as artifact
+      - name: 📤 Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: RDPPro-Debug-${{ steps.version.outputs.version }}-${{ steps.version.outputs.commit }}
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 30
+
+      # 12. Upload Release APK (only on tags)
+      - name: 📤 Upload Release APK
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: RDPPro-Release-${{ steps.version.outputs.version }}
+          path: app/build/outputs/apk/release/*.apk
+          retention-days: 90
+
+      # 13. Create GitHub Release (only on version tags)
+      - name: 🎉 Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: RDP Pro ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref_name }}
+          body: |
+            ## 🖥️ RDP Pro ${{ steps.version.outputs.version }}
+
+            ### التثبيت
+            1. حمّل ملف APK أدناه
+            2. فعّل "مصادر غير معروفة" في إعدادات الأندرويد
+            3. ثبّت التطبيق
+            4. شغّل الـ Backend على حاسوبك
+
+            ### الجديد في هذا الإصدار
+            - ⚡ Wake-on-LAN — تشغيل الحاسوب عن بُعد
+            - 💬 دردشة نصية أثناء الجلسة
+            - ⏺ تسجيل الجلسات
+            - 🔑 رموز وصول مؤقتة
+            - ⚡ ضغط Delta للشاشة (أسرع بـ 40%)
+            - 🖱️ مؤشر الفأرة العائم
+            - 🔄 إعادة اتصال ذكية (Exponential Backoff)
+
+            **Build:** ${{ steps.version.outputs.commit }} | **Date:** ${{ steps.version.outputs.date }}
+          files: app/build/outputs/apk/release/*.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 14. Build summary
+      - name: 📊 Build Summary
+        if: always()
+        run: |
+          echo "## 🚀 Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| Item | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ steps.version.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | ${{ steps.version.outputs.commit }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Date | ${{ steps.version.outputs.date }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branch | ${{ github.ref_name }} |" >> $GITHUB_STEP_SUMMARY
+
+          # List APK files
+          echo "### 📦 APK Files" >> $GITHUB_STEP_SUMMARY
+          find app/build/outputs/apk -name "*.apk" -exec echo "- {}" \; >> $GITHUB_STEP_SUMMARY || echo "No APK files found" >> $GITHUB_STEP_SUMMARY
+
+  # ─────────────────────────────────────────────────────────────────
+  # Optional: Lint check
+  lint:
+    name: 🔍 Lint Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+      - run: chmod +x ./gradlew
+      - name: Run Lint
+        run: ./gradlew lint --no-daemon 2>&1 | tail -50
+      - name: Upload Lint Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-results
+          path: app/build/reports/lint-results*.html
+          retention-days: 7

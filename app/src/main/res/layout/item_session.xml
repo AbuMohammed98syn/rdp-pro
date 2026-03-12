@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/bg_card" android:padding="12dp"
+    android:orientation="vertical" android:layout_marginBottom="8dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginBottom="6dp">
+        <TextView android:id="@+id/tvSessName"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvSessStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="10sp" android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvSessAddr"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textColor="#4A5568" android:textSize="10sp" android:fontFamily="monospace"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView android:id="@+id/tvSessStats"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textColor="#64748B" android:textSize="9sp" android:fontFamily="monospace"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- CPU bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginBottom="3dp">
+        <TextView android:layout_width="30dp" android:layout_height="wrap_content"
+            android:text="CPU" android:textColor="#4A5568" android:textSize="8sp"/>
+        <ProgressBar android:id="@+id/progSessCpu"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="4dp" style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="#3B82F6" android:progressBackgroundTint="#131E36"
+            android:max="100"/>
+    </LinearLayout>
+    <!-- RAM bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginBottom="8dp">
+        <TextView android:layout_width="30dp" android:layout_height="wrap_content"
+            android:text="RAM" android:textColor="#4A5568" android:textSize="8sp"/>
+        <ProgressBar android:id="@+id/progSessRam"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="4dp" style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="#10B981" android:progressBackgroundTint="#131E36"
+            android:max="100"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="end">
+        <Button android:id="@+id/btnSessEdit"
+            android:layout_width="wrap_content" android:layout_height="30dp"
+            android:text="✏" android:textSize="10sp" android:textColor="#94A3B8"
+            android:background="@drawable/bg_btn_dark" android:paddingHorizontal="10dp"
+            android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/btnSessDelete"
+            android:layout_width="wrap_content" android:layout_height="30dp"
+            android:text="🗑" android:textSize="10sp" android:textColor="#EF4444"
+            android:background="@drawable/bg_btn_dark" android:paddingHorizontal="10dp"
+            android:layout_marginEnd="4dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSessOpen"
+            android:layout_width="wrap_content" android:layout_height="30dp"
+            android:text="▶ فتح" android:textSize="10sp" android:textColor="#FFFFFF"
+            app:backgroundTint="#1D4ED8" app:cornerRadius="6dp"
+            android:paddingHorizontal="14dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#050810">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="42dp"
+        android:background="#080d17" android:gravity="center_vertical"
+        android:paddingHorizontal="12dp" android:paddingVertical="6dp">
+        <TextView android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="⚙ Macro Recorder" android:textColor="#FFFFFF"
+            android:textSize="13sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvRecStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="⏹ جاهز" android:textColor="#4A5568" android:textSize="10sp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- Record controls -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/bg_card" android:padding="10dp"
+        android:gravity="center_vertical" android:layout_margin="8dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMacroRecord"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="38dp" android:text="⏺ تسجيل"
+            android:textColor="#FFFFFF" android:textSize="11sp"
+            app:backgroundTint="#7F1D1D" app:cornerRadius="8dp"
+            android:layout_marginEnd="6dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMacroStop"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="38dp" android:text="⏹ إيقاف"
+            android:textColor="#FFFFFF" android:textSize="11sp"
+            app:backgroundTint="#1F2937" app:cornerRadius="8dp"
+            android:enabled="false" android:layout_marginEnd="6dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddStep"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="38dp" android:text="➕ خطوة"
+            android:textColor="#22D3EE" android:textSize="11sp"
+            app:backgroundTint="#050F20" app:strokeColor="#0E7490"
+            app:strokeWidth="1dp" app:cornerRadius="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
+
+    <!-- Current steps -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical" android:padding="8dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="الخطوات المسجّلة" android:textColor="#64748B"
+                android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"/>
+            <TextView android:id="@+id/tvStepCount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0 خطوة" android:textColor="#3B82F6" android:textSize="10sp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMacroSteps"
+            android:layout_width="match_parent" android:layout_height="140dp"
+            android:background="@drawable/bg_card" android:padding="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMacroSave"
+            android:layout_width="match_parent" android:layout_height="38dp"
+            android:text="💾 حفظ الماكرو"
+            android:textColor="#FCD34D" android:textSize="12sp"
+            app:backgroundTint="#111107" app:strokeColor="#F59E0B"
+            app:strokeWidth="1dp" app:cornerRadius="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:enabled="false" android:layout_marginTop="6dp"/>
+
+        <!-- Saved macros -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="الماكرو المحفوظة" android:textColor="#64748B"
+            android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"
+            android:layout_marginTop="10dp" android:layout_marginBottom="6dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMacros"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

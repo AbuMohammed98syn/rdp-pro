@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:background="#050810">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#050810">
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/moreTabs"
-        android:layout_width="match_parent" android:layout_height="42dp"
-        android:background="#090D17"
-        app:tabTextColor="#4A5568" app:tabSelectedTextColor="#60A5FA"
-        app:tabIndicatorColor="#2563EB" app:tabMode="fixed"
-        xmlns:app="http://schemas.android.com/apk/res-auto"/>
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#080D17"
+        app:tabTextColor="#4A5568"
+        app:tabSelectedTextColor="#3B82F6"
+        app:tabIndicatorColor="#3B82F6"
+        app:tabMode="scrollable"
+        app:tabContentStart="6dp"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/morePager"
-        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
+
 </LinearLayout>

@@ -8,56 +8,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:padding="10dp">
 
-        <!-- ── CPU / RAM / DISK ── -->
+        <!-- ── Stats Row: CPU / RAM / DISK ── -->
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="6dp">
 
-            <!-- CPU -->
             <LinearLayout android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content" android:orientation="vertical"
                 android:background="@drawable/bg_card" android:padding="10dp">
                 <TextView android:id="@+id/tvCpu"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="CPU 0%" android:textColor="#3B82F6"
-                    android:textSize="12sp" android:textStyle="bold"/>
+                    android:textSize="11sp" android:textStyle="bold"/>
                 <ProgressBar android:id="@+id/pbCpu"
-                    android:layout_width="match_parent" android:layout_height="5dp"
+                    android:layout_width="match_parent" android:layout_height="4dp"
                     android:layout_marginTop="5dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:progressTint="#3B82F6" android:max="100"/>
             </LinearLayout>
 
-            <Space android:layout_width="6dp" android:layout_height="1dp"/>
+            <Space android:layout_width="5dp" android:layout_height="1dp"/>
 
-            <!-- RAM -->
             <LinearLayout android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content" android:orientation="vertical"
                 android:background="@drawable/bg_card" android:padding="10dp">
                 <TextView android:id="@+id/tvRam"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="RAM 0%" android:textColor="#10B981"
-                    android:textSize="12sp" android:textStyle="bold"/>
+                    android:textSize="11sp" android:textStyle="bold"/>
                 <ProgressBar android:id="@+id/pbRam"
-                    android:layout_width="match_parent" android:layout_height="5dp"
+                    android:layout_width="match_parent" android:layout_height="4dp"
                     android:layout_marginTop="5dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:progressTint="#10B981" android:max="100"/>
             </LinearLayout>
 
-            <Space android:layout_width="6dp" android:layout_height="1dp"/>
+            <Space android:layout_width="5dp" android:layout_height="1dp"/>
 
-            <!-- DISK -->
             <LinearLayout android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content" android:orientation="vertical"
                 android:background="@drawable/bg_card" android:padding="10dp">
                 <TextView android:id="@+id/tvDisk"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="Disk 0%" android:textColor="#F59E0B"
-                    android:textSize="12sp" android:textStyle="bold"/>
+                    android:textSize="11sp" android:textStyle="bold"/>
                 <ProgressBar android:id="@+id/pbDisk"
-                    android:layout_width="match_parent" android:layout_height="5dp"
+                    android:layout_width="match_parent" android:layout_height="4dp"
                     android:layout_marginTop="5dp"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:progressTint="#F59E0B" android:max="100"/>
@@ -65,9 +62,9 @@
         </LinearLayout>
 
         <!-- ── Network + Uptime ── -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="38dp"
+        <LinearLayout android:layout_width="match_parent" android:layout_height="36dp"
             android:background="@drawable/bg_card" android:gravity="center_vertical"
-            android:paddingHorizontal="12dp" android:layout_marginBottom="12dp">
+            android:paddingHorizontal="12dp" android:layout_marginBottom="8dp">
             <TextView android:id="@+id/tvNet"
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -79,15 +76,51 @@
                 android:textColor="#4A5568" android:textSize="10sp"/>
         </LinearLayout>
 
+        <!-- ── CHARTS ROW ── -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <!-- CPU Chart -->
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:background="@drawable/bg_card" android:padding="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📈 CPU" android:textColor="#3B82F6"
+                    android:textSize="10sp" android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chartCpu"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+            </LinearLayout>
+
+            <Space android:layout_width="6dp" android:layout_height="1dp"/>
+
+            <!-- RAM Chart -->
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:background="@drawable/bg_card" android:padding="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📊 RAM" android:textColor="#10B981"
+                    android:textSize="10sp" android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chartRam"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
         <!-- ── Quick Commands ── -->
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
             android:text="أوامر سريعة" android:textColor="#64748B"
             android:textSize="10sp" android:textStyle="bold"
             android:textAllCaps="true" android:letterSpacing="0.08"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="6dp"/>
 
         <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:columnCount="4" android:layout_marginBottom="14dp">
+            android:columnCount="4" android:layout_marginBottom="12dp">
 
             <LinearLayout android:id="@+id/qcmdLock" android:layout_width="0dp"
                 android:layout_columnWeight="1" android:layout_height="wrap_content"
@@ -95,10 +128,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🔒" android:textSize="20sp"/>
+                    android:text="🔒" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="قفل" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="قفل" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdTaskMgr" android:layout_width="0dp"
@@ -107,10 +139,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="📊" android:textSize="20sp"/>
+                    android:text="📊" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="مهام" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="مهام" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdCmd" android:layout_width="0dp"
@@ -119,10 +150,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="⌨" android:textSize="20sp"/>
+                    android:text="⌨" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="CMD" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="CMD" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdPowerShell" android:layout_width="0dp"
@@ -131,10 +161,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="💻" android:textSize="20sp"/>
+                    android:text="💻" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="PS" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="PS" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdExplorer" android:layout_width="0dp"
@@ -143,10 +172,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🗂️" android:textSize="20sp"/>
+                    android:text="🗂" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Explorer" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="Explorer" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdSleep" android:layout_width="0dp"
@@ -155,10 +183,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="💤" android:textSize="20sp"/>
+                    android:text="💤" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="سكون" android:textColor="#94A3B8" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="سكون" android:textColor="#94A3B8" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdRestart" android:layout_width="0dp"
@@ -167,10 +194,9 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🔄" android:textSize="20sp"/>
+                    android:text="🔄" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="إعادة" android:textColor="#F59E0B" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="إعادة" android:textColor="#F59E0B" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
 
             <LinearLayout android:id="@+id/qcmdShutdown" android:layout_width="0dp"
@@ -179,11 +205,11 @@
                 android:background="@drawable/bg_card" android:padding="10dp"
                 android:layout_margin="3dp" android:clickable="true" android:focusable="true">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="⏻" android:textSize="20sp"/>
+                    android:text="⏻" android:textSize="18sp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="إيقاف" android:textColor="#EF4444" android:textSize="9sp"
-                    android:layout_marginTop="3dp"/>
+                    android:text="إيقاف" android:textColor="#EF4444" android:textSize="9sp" android:layout_marginTop="2dp"/>
             </LinearLayout>
+
         </GridLayout>
 
         <!-- ── Processes ── -->

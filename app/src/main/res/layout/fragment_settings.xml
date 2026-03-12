@@ -1,119 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#050810">
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="vertical" android:padding="14dp">
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="⚙️ إعدادات البث" android:textColor="#FFFFFF"
-        android:textSize="13sp" android:textStyle="bold" android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@drawable/bg_card" android:padding="14dp"
-        android:orientation="vertical" android:layout_marginBottom="8dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="جودة الصورة" android:textColor="#94A3B8" android:textSize="11sp"/>
-            <TextView android:id="@+id/tvQualityVal"
-                android:layout_width="40dp" android:layout_height="wrap_content"
-                android:textColor="#60A5FA" android:textSize="11sp" android:textStyle="bold"
-                android:gravity="end"/>
-        </LinearLayout>
-        <com.google.android.material.slider.Slider android:id="@+id/sliderQuality"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:valueFrom="10" android:valueTo="95" android:stepSize="5"
-            app:thumbColor="#3B82F6" app:trackColorActive="#3B82F6" app:trackColorInactive="#1A2540"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@drawable/bg_card" android:padding="14dp"
-        android:orientation="vertical" android:layout_marginBottom="8dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="معدل الإطارات (FPS)" android:textColor="#94A3B8" android:textSize="11sp"/>
-            <TextView android:id="@+id/tvFpsVal"
-                android:layout_width="50dp" android:layout_height="wrap_content"
-                android:textColor="#10B981" android:textSize="11sp" android:textStyle="bold"
-                android:gravity="end"/>
-        </LinearLayout>
-        <com.google.android.material.slider.Slider android:id="@+id/sliderFps"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:valueFrom="5" android:valueTo="60" android:stepSize="5"
-            app:thumbColor="#10B981" app:trackColorActive="#10B981" app:trackColorInactive="#1A2540"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@drawable/bg_card" android:padding="14dp"
-        android:orientation="vertical" android:layout_marginBottom="8dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-            <TextView android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="حجم الصورة (Scale)" android:textColor="#94A3B8" android:textSize="11sp"/>
-            <TextView android:id="@+id/tvScaleVal"
-                android:layout_width="40dp" android:layout_height="wrap_content"
-                android:textColor="#F59E0B" android:textSize="11sp" android:textStyle="bold"
-                android:gravity="end"/>
-        </LinearLayout>
-        <com.google.android.material.slider.Slider android:id="@+id/sliderScale"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:valueFrom="0.3" android:valueTo="2.0" android:stepSize="0.1"
-            app:thumbColor="#F59E0B" app:trackColorActive="#F59E0B" app:trackColorInactive="#1A2540"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@drawable/bg_card" android:padding="14dp"
-        android:orientation="vertical" android:layout_marginBottom="8dp">
+        <!-- ── Screen Quality ── -->
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="الشاشة المعروضة" android:textColor="#94A3B8"
-            android:textSize="11sp" android:layout_marginBottom="6dp"/>
-        <Spinner android:id="@+id/spinnerMonitor"
-            android:layout_width="match_parent" android:layout_height="40dp"
-            android:background="@drawable/bg_field"/>
+            android:text="جودة الشاشة" android:textColor="#64748B"
+            android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:padding="14dp"
+            android:orientation="vertical" android:layout_marginBottom="10dp">
+
+            <!-- Quality -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="جودة JPEG" android:textColor="#94A3B8" android:textSize="13sp"/>
+                <TextView android:id="@+id/tvQualityVal"
+                    android:layout_width="50dp" android:layout_height="wrap_content"
+                    android:textColor="#3B82F6" android:textSize="13sp"
+                    android:fontFamily="monospace" android:gravity="end"/>
+            </LinearLayout>
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderQuality"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="20" android:valueTo="95" android:stepSize="5"
+                app:thumbColor="#3B82F6" app:trackColorActive="#3B82F6"/>
+
+            <!-- FPS -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:layout_marginTop="8dp" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="معدل الإطارات" android:textColor="#94A3B8" android:textSize="13sp"/>
+                <TextView android:id="@+id/tvFpsVal"
+                    android:layout_width="60dp" android:layout_height="wrap_content"
+                    android:textColor="#10B981" android:textSize="13sp"
+                    android:fontFamily="monospace" android:gravity="end"/>
+            </LinearLayout>
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderFps"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="5" android:valueTo="60" android:stepSize="5"
+                app:thumbColor="#10B981" app:trackColorActive="#10B981"/>
+
+            <!-- Scale -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:layout_marginTop="8dp" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="مقياس الشاشة" android:textColor="#94A3B8" android:textSize="13sp"/>
+                <TextView android:id="@+id/tvScaleVal"
+                    android:layout_width="60dp" android:layout_height="wrap_content"
+                    android:textColor="#F59E0B" android:textSize="13sp"
+                    android:fontFamily="monospace" android:gravity="end"/>
+            </LinearLayout>
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderScale"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="0.5" android:valueTo="3.0" android:stepSize="0.1"
+                app:thumbColor="#F59E0B" app:trackColorActive="#F59E0B"/>
+
+        </LinearLayout>
+
+        <!-- ── Multi-Monitor ── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="الشاشات المتعددة" android:textColor="#64748B"
+            android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:padding="12dp"
+            android:gravity="center_vertical" android:layout_marginBottom="10dp">
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="اختر الشاشة" android:textColor="#94A3B8" android:textSize="13sp"/>
+            <Spinner android:id="@+id/spinnerMonitor"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#3B82F6"/>
+        </LinearLayout>
+
+        <!-- ── Temp Token ── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="رمز وصول مؤقت" android:textColor="#64748B"
+            android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:padding="14dp"
+            android:orientation="vertical" android:layout_marginBottom="10dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="مدة الصلاحية" android:textColor="#94A3B8" android:textSize="13sp"/>
+                <Spinner android:id="@+id/spinnerTokenExpiry"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#8B5CF6"/>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGenToken"
+                android:layout_width="match_parent" android:layout_height="42dp"
+                android:text="🔑 إنشاء Token مؤقت"
+                android:textColor="#FFFFFF" android:textSize="13sp"
+                app:backgroundTint="#8B5CF6" app:cornerRadius="8dp"/>
+
+            <TextView android:id="@+id/tvTokenResult"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="#A78BFA" android:textSize="11sp"
+                android:fontFamily="monospace" android:padding="8dp"
+                android:background="@drawable/bg_field"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:layout_marginTop="4dp">
+                <TextView android:id="@+id/tvTokenExpiry"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#4A5568" android:textSize="10sp"
+                    android:visibility="gone"/>
+                <Button android:id="@+id/btnCopyToken"
+                    android:layout_width="wrap_content" android:layout_height="32dp"
+                    android:text="نسخ 📋" android:textSize="11sp"
+                    android:textColor="#A78BFA" android:background="@drawable/bg_btn_dark"
+                    android:paddingHorizontal="12dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Connection Info ── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="معلومات الاتصال" android:textColor="#64748B"
+            android:textSize="10sp" android:textAllCaps="true" android:letterSpacing="0.08"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:padding="14dp"
+            android:orientation="vertical" android:layout_marginBottom="10dp">
+
+            <TextView android:id="@+id/tvConnInfo"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="جاري التحميل..."
+                android:textColor="#94A3B8" android:textSize="12sp"
+                android:fontFamily="monospace" android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTestConn"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="38dp"
+                    android:text="قياس التأخر"
+                    android:textColor="#FFFFFF" android:textSize="12sp"
+                    app:backgroundTint="#1E3A5F" app:strokeColor="#3B82F6"
+                    app:strokeWidth="1dp" app:cornerRadius="8dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                <Space android:layout_width="8dp" android:layout_height="1dp"/>
+                <TextView android:id="@+id/tvLatency"
+                    android:layout_width="80dp" android:layout_height="wrap_content"
+                    android:text="-- ms" android:textColor="#10B981"
+                    android:textSize="18sp" android:fontFamily="monospace"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Disconnect ── -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDisconnect"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="⏹ قطع الاتصال"
+            android:textColor="#EF4444" android:textSize="14sp" android:textStyle="bold"
+            app:backgroundTint="#1A0505" app:strokeColor="#EF4444"
+            app:strokeWidth="1dp" app:cornerRadius="10dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginTop="4dp" android:layout_marginBottom="20dp"/>
+
     </LinearLayout>
-
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="معلومات الخادم" android:textColor="#FFFFFF"
-        android:textSize="13sp" android:textStyle="bold"
-        android:layout_marginTop="10dp" android:layout_marginBottom="8dp"/>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:background="@drawable/bg_card" android:padding="14dp"
-        android:orientation="vertical" android:layout_marginBottom="8dp">
-        <TextView android:id="@+id/tvConnInfo"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:textColor="#64748B" android:textSize="11sp"
-            android:fontFamily="monospace" android:lineSpacingMultiplier="1.5"
-            android:text="جاري التحميل..."/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp">
-        <Button android:id="@+id/btnTestConn"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="42dp"
-            android:text="🏓 قياس الاتصال" android:textSize="11sp" android:textColor="#94A3B8"
-            android:background="@drawable/bg_btn_dark"/>
-        <Space android:layout_width="8dp" android:layout_height="1dp"/>
-        <TextView android:id="@+id/tvLatency"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="42dp"
-            android:textColor="#10B981" android:textSize="18sp" android:textStyle="bold"
-            android:fontFamily="monospace" android:gravity="center"/>
-    </LinearLayout>
-
-    <Button android:id="@+id/btnDisconnect"
-        android:layout_width="match_parent" android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:text="⏏ قطع الاتصال والخروج" android:textColor="#EF4444"
-        android:textSize="12sp" android:background="@drawable/bg_btn_red"/>
-
-    <Space android:layout_width="match_parent" android:layout_height="20dp"/>
-</LinearLayout>
 </ScrollView>

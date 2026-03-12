@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="20dp" android:background="#080D17">
+    <EditText android:id="@+id/etSessName"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:hint="اسم الجهاز" android:textColorHint="#4A5568"
+        android:textColor="#FFFFFF" android:background="@drawable/bg_field"
+        android:paddingHorizontal="12dp" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/etSessIp"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:hint="IP الجهاز" android:textColorHint="#4A5568"
+        android:textColor="#FFFFFF" android:background="@drawable/bg_field"
+        android:paddingHorizontal="12dp" android:inputType="textUri"
+        android:fontFamily="monospace" android:layout_marginBottom="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:layout_marginBottom="8dp">
+        <EditText android:id="@+id/etSessPort"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="44dp"
+            android:hint="Port" android:textColorHint="#4A5568"
+            android:textColor="#FFFFFF" android:background="@drawable/bg_field"
+            android:paddingHorizontal="12dp" android:inputType="number"
+            android:fontFamily="monospace" android:layout_marginEnd="10dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="HTTPS" android:textColor="#64748B" android:textSize="11sp"
+            android:layout_marginEnd="4dp"/>
+        <Switch android:id="@+id/swSessHttps"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:thumbTint="#3B82F6" android:trackTint="#1E3A5F"/>
+    </LinearLayout>
+    <EditText android:id="@+id/etSessToken"
+        android:layout_width="match_parent" android:layout_height="44dp"
+        android:hint="Token" android:textColorHint="#4A5568"
+        android:textColor="#FFFFFF" android:background="@drawable/bg_field"
+        android:paddingHorizontal="12dp" android:inputType="textPassword"
+        android:fontFamily="monospace"/>
+</LinearLayout>
